@@ -1,0 +1,118 @@
+$body-bg: #333;
+$font-color: #fff;
+$primary-color: #008ed6;
+$icon-font-size: 30px;
+
+//Extending Properties of .fa
+%extend-fa1{
+    background-color: $font-color;
+    color: $primary-color;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: $icon-font-size;
+}
+%extend-fa2{
+    background: $body-bg;
+    color: $font-color;
+    @extend %extend-fa1;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: $body-bg;
+    color: $font-color;
+}
+//Navbar Syle
+.navbar{
+    border-bottom: 3px solid $primary-color;
+    background: #292b2c;
+    opacity: 0.7;
+    overflow: hidden;
+    .fa{
+        color: red;
+        font-size: 30px;
+    }
+    a{
+        color: rgb(221, 219, 221);
+    }
+}
+//Home Section Style
+#home{
+    background: url("../img/home.jpg");
+    background-repeat: no-repeat;
+    background-position: center-top;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 700px;
+
+    .dark-overlay{
+        background: rgba(0, 0, 0, 0.7);
+        min-height: 700px;
+    }
+    .fa{
+        @extend %extend-fa1;
+    }
+    .card-form{
+        opacity: 0.8;
+    }
+    .home-inner{
+        padding-top: 130px;
+        padding-bottom: 50px;
+    }
+}
+//Explore Main Section Style
+#explore-main{
+    background: #F8F9FA;
+    color: #333;
+    .fa {
+        @extend %extend-fa2;
+    }
+}
+//Create main Section Style
+#create-main{
+    .fa{
+        @extend %extend-fa1;
+    }
+}
+//Share Main Section Style
+#share-main {
+    background: #F8F9FA;
+    color: #333;
+
+    .fa {
+        @extend %extend-fa2;
+    }
+}
+#messageBy{
+    display: none;
+    .d-flex{
+        justify-content: space-between;
+    }
+}
+
+//Home section Media Query
+@media(max-width: 768px){
+    #home{
+        h1{
+            font-size: 36px;
+        }
+    }
+}
+//Explore Main Section Media Query
+@media(max-width: 356px){
+    #home, #explore-main, #create-main, #share-main{
+        h1{
+            font-size: 30px;
+        }
+        p{
+            font-size: 15px;
+            margin-top: 2px;
+        }
+        .fa{
+            font-size: 20px;
+        }
+    }
+}
